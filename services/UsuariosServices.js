@@ -12,7 +12,8 @@ function listar(){
 }
 
 function salvar(arrayDeUsuarios){
-    // Seu código aqui
+    const fs = require('fs');
+    fs.writeFileSync('./databases/usuarios.json', JSON.stringify(arrayDeUsuarios, null, 4));
 }
 
 function cadastrar(objeto){
@@ -59,6 +60,7 @@ const UsuariosServices = {
     cadastrar,
     listar,
     detalhar,
+    salvar,
     remover,
     alterar,
     addEndereco,
